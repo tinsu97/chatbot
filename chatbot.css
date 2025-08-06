@@ -1,0 +1,72 @@
+/* Container layout */
+.js-container {
+  max-width: 400px;
+  margin: 20px auto;
+  font-family: sans-serif;
+}
+
+/* Chat message container */
+.chat-msg {
+  display: flex;
+  margin: 10px;
+}
+
+/* Left (robot) */
+.chat-msg.robot {
+  justify-content: flex-start;
+}
+
+/* Right (user) */
+.chat-msg.user {
+  justify-content: flex-end;
+}
+
+/* Message bubble base */
+.chat-bubble {
+  position: relative;
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  line-height: 1.4;
+}
+
+/* Robot bubble styling */
+.chat-msg.robot .chat-bubble {
+  background: #e1ffc7;
+  color: #000;
+  border-bottom-left-radius: 3px;
+  margin-right: auto;
+}
+
+/* User bubble styling */
+.chat-msg.user .chat-bubble {
+  background: #0084ff;
+  color: #fff;
+  border-bottom-right-radius: 3px;
+  margin-left: auto;
+}
+
+/* Optionally add time using ::after */
+.chat-bubble::after {
+  content: attr(data-time);
+  position: absolute;
+  font-size: 0.75rem;
+  color: #888;
+  bottom: -18px;
+}
+.chat-msg.user .chat-bubble::after {
+  right: 0;
+}
+.chat-msg.robot .chat-bubble::after {
+  left: 0;
+}
+
+/* Avatar images */
+.chat-msg img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0 8px;
+  align-self: flex-end;
+}
