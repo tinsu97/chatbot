@@ -17,7 +17,7 @@
             return(
             <>
                 <input placeholder="Send a message to Chatbot" size="30" />
-                <button>send</button>
+                <button>Send</button>
           </>
         );
         }
@@ -67,10 +67,21 @@
                 <ChatMessage 
                 message={"Today is " + getDate()} 
                 sender="robot"/>
+                <ChatMessage
+                message="how about flip a coin?"
+                sender="user" />
+                <ChatMessage 
+                message="Sure!You got heads"
+                sender="robot"/>
+                <ChatMessage
+                message="okey thank you"
+                sender="user"/>
+                <ChatMessage
+                message="No problem! Let me know if you need help with anything else!"
+                sender="robot"/>
             </>
         );
         }
-        
         const container = document.querySelector('.js-container');
         ReactDOM.createRoot(container).render(<App />);
 
